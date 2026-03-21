@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   max-width: 100%;
-  outline: 1px solid red;
 }
 
 body {
@@ -398,25 +397,25 @@ header {
   .s1 {
   position: absolute;
   top: 100px;
-  left: 0%;
+  left: -10%;
 }
 
 .s2 {
   position: absolute;
   top: 225px;
-  left: 0%;
+  left: -10%;
 }
 
 .s3 {
   position: absolute;
   top: 350px;
-  left: 0%;
+  left: -10%;
 }
 
 .s4 {
   position: absolute;
   top: 480px;
-  left: 0%;
+  left: -10%;
 }
 
 }
