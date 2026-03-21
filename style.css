@@ -305,9 +305,9 @@ header {
   }
 
   .vapor {
-    width: 400px;
+    width: 100%;
     height: 830px;
-    left: 0%
+    left: 5%
   }
 
   .sticker {
