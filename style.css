@@ -1,0 +1,618 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    #0589f5 0%,
+    #1d2329 25%,
+    #030e1a 50%,
+    #1d2329 75%,
+    #0589f5 100%
+  );
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  padding-bottom: 50px;
+}
+
+/* CUERPO DESECHABLES */
+
+.desechables {
+  background: linear-gradient(
+    180deg,
+    #05d9f5 0%,
+    #013535 25%,
+    #001414 50%,
+    #013535 75%,
+    #05d9f5 100%
+  )
+}
+
+.desechables .producto {
+  border: 2px solid #00eaff;
+
+  box-shadow:
+    0 0 5px #00eaff,
+    0 0 15px #00eaff;
+}
+
+.desechables .producto:hover {
+  box-shadow:
+    0 0 10px #00eaff,
+    0 0 20px #00eaff,
+    0 0 40px #00eaff;
+}
+
+.desechables .comprar-btn {
+  background: #047580;
+  color: black;
+}
+
+.desechables .comprar-btn:hover {
+  background: #1efafa;
+}
+
+/* CUERPO RECARGABLES */
+
+.recargables {
+  background: linear-gradient(
+    180deg,
+    #c000fa 0%,
+    #170264 25%,
+    #001414 50%,
+    #170264 75%,
+    #c000fa 100%
+  );
+}
+
+.recargables .producto {
+  border: 2px solid #b266ff;
+
+  box-shadow:
+    0 0 10px #b266ff,
+    0 0 20px #b266ff,
+    0 0 30px #b266ff;
+}
+
+.recargables .producto:hover {
+  box-shadow:
+    0 0 10px #ff09f3,
+    0 0 20px #ff09f3,
+    0 0 40px #ff09f3;
+}
+
+.recargables .comprar-btn {
+  background: #ae00ff;
+  color: black;
+}
+
+.recargables .comprar-btn:hover {
+  background: #0044ff;
+}
+
+/* CUERPO ESENCIAS */
+
+.esencias {
+  background: linear-gradient(
+    180deg,
+    #f15dd9 0%,
+    #f183f1 25%,
+    #b21cee 50%,
+    #f183f1 75%,
+    #f15dd9 100%
+  );
+}
+
+.esencias .producto {
+  border: 2px solid #ff00aa;
+
+  box-shadow:
+    0 0 10px #ff00aaa9,
+    0 0 20px #ff00bf;
+}
+
+.esencias .producto:hover {
+  box-shadow:
+    0 0 10px #e100ff,
+    0 0 20px #ff00f2,
+    0 0 40px #ff0077;
+}
+
+.esencias .comprar-btn {
+  background: #ff0062;
+  color: black;
+}
+
+.esencias .comprar-btn:hover {
+  background: #ae00ff;
+}
+
+/* MAIN */
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  background: transparent;
+  color: white;
+  padding: 5px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 280px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CATALOGOS Y PRODUCTOS */
+
+.catalogo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.producto {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 15px;
+  width: 330px;
+  text-align: center;
+
+  border: 2px solid #00eaff;
+
+  box-shadow:
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00eaff;
+
+  transition: 0.3s;
+}
+
+
+
+.producto:hover {
+  transform: scale(1.05);
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* BOTON COMPRAR EN CATALOGO */
+
+.comprar-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+
+  border-radius: 8px;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.comprar-btn:hover {
+  background: #1ebe5d;
+  transform: scale(1.1);
+}
+
+/* Modal edad */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.aviso {
+  font-size: 12px;
+  margin: 15px 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+.categorias {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  overflow: visible;
+  
+}
+
+.vapor {
+  position: absolute;
+  width: 300px;
+  opacity: 0.5;
+  z-index: 0;
+  top: -175px;
+}
+
+.btn {
+  position: relative;
+  background: black;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1;
+  border-radius: 8px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.neon-blue {
+  color: #00eaff;
+  text-shadow:
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00eaff;
+
+  box-shadow:
+    0 0 5px #00eaff,
+    0 0 15px #00eaff;
+}
+
+.neon-purple {
+  color: #b266ff;
+  text-shadow:
+    0 0 5px #b266ff,
+    0 0 10px #b266ff,
+    0 0 20px #b266ff;
+
+  box-shadow:
+    0 0 5px #b266ff,
+    0 0 15px #b266ff;
+}
+
+.neon-pink {
+  color: #ff4dff;
+  text-shadow:
+    0 0 5px #ff4dff,
+    0 0 10px #ff4dff,
+    0 0 20px #ff4dff;
+
+  box-shadow:
+    0 0 5px #ff4dff,
+    0 0 15px #ff4dff;
+}
+
+.neon-yellow {
+  color: #fff200;
+  text-shadow:
+    0 0 5px #fff200,
+    0 0 10px #fff200,
+    0 0 20px #fff200;
+
+  box-shadow:
+    0 0 5px #fff200,
+    0 0 15px #fff200;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.wpp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 140px;
+  height: 100px;
+
+  background: black;
+  color: #39ff14;
+  text-decoration: none;
+
+  border-radius: 50px; /* forma base */
+
+  font-weight: bold;
+  font-size: 16px;
+
+  transition: 0.3s;
+
+  isolation: isolate;
+
+  overflow: hidden;
+}
+
+
+
+.wpp-btn {
+  box-shadow:
+  0 0 5px #39ff14,
+  0 0 10px #39ff14,
+  0 0 20px #39ff14;
+
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14;
+
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.wpp-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.icono {
+  width: 35px;
+}
+
+.wpp-btn:hover {
+  transform: scale(1.1);
+}
+
+.fondo-stickers {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sticker {
+  position: absolute;
+  width: 90px;
+  opacity: 1;
+  animation: flotar 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes flotar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
+}
+
+.s1 {
+  top: -70px;
+  left: 23%;
+  transform: translateX(-180px);
+}
+
+.s2 {
+  top: -70px;
+  left: 39%;
+}
+
+.s3 {
+  top: -70px;
+  left: 54%;
+}
+
+.s4 {
+  top: -54px;
+  left: 69%;
+}
+
+@media (max-width: 600px) {
+
+   body {
+    padding-bottom: 70px;
+  }
+
+  /* MODAL */
+  .modal-content {
+    width: 90%;
+    max-width: 320px;
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+  }
+
+  .modal-content button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .aviso {
+    font-size: 11px;
+  }
+
+  /* HEADER */
+  header {
+    padding: 5px 0;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  /* CATEGORÍAS */
+  .categorias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    margin-top: 10px;
+    position: relative;
+    min-height: 400px;
+  }
+
+  .btn {
+    width: 90%;
+    max-width: 250px;
+    font-size: 14px;
+  }
+
+  /* VAPOR */
+  .vapor {
+  width: 100%;
+  height: auto;
+  top: 40px; 
+  left: 25px;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+  /* WHATSAPP */
+  .whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  z-index: 999;
+}
+
+  .wpp-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 0;
+  box-shadow:
+  0 0 10px #39ff14,
+  0 0 20px #39ff14,
+  0 0 30px #39ff14;
+}
+  
+  .wpp-btn span {
+  display: none;
+}
+
+.wpp-btn:nth-child(1) {
+  background: #25D366;
+}
+
+.wpp-btn:nth-child(2) {
+  background: #128C7E;
+}
+
+  
+
+  .icono {
+    width: 50px;
+  }
+
+  /* 🎨 STICKERS ORGANIZADOS */
+ .fondo-stickers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  position: relative; /* quita el absoluto */
+  transform: none;
+  margin-bottom: 10px;
+  height: 80px;
+  }
+
+  .sticker {
+  position: static;
+  width: 90px;
+  opacity: 1;
+  }
+
+  /* POSICIONES LIMPIAS */
+  .s1 {
+  position: absolute;
+  top: 100px;
+  left: -10%;
+}
+
+.s2 {
+  position: absolute;
+  top: 225px;
+  left: -10%;
+}
+
+.s3 {
+  position: absolute;
+  top: 350px;
+  left: -10%;
+}
+
+.s4 {
+  position: absolute;
+  top: 480px;
+  left: -10%;
+}
+
+
+}
